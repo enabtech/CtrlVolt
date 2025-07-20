@@ -3,63 +3,240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Electronics & Computer Engineering Portfolio</title>
+  <title>CtrlVolt | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      display: flex;
+      min-height: 100vh;
     }
-    header {
+
+    .sidebar {
+      width: 260px;
+      background-color: #0f172a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem 1rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h1 {
+      font-size: 2rem;
+      color: #38bdf8;
       text-align: center;
-      padding-bottom: 20px;
+      margin-bottom: 2rem;
     }
-    h1 {
-      color: #2c3e50;
-    }
-    section {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    a {
-      color: #3498db;
+
+    .sidebar nav a {
+      display: block;
+      padding: 1rem;
+      margin: 0.5rem 0;
       text-decoration: none;
+      color: #e5e7eb;
+      border-left: 4px solid transparent;
+      transition: all 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .sidebar nav a:hover {
+      background: #1e293b;
+      border-left: 4px solid #38bdf8;
+    }
+
+    .content {
+      flex: 1;
+      padding: 3rem;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h2 {
+      font-size: 2.4rem;
+      color: #0f172a;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      color: #1d4ed8;
+      margin-bottom: 0.75rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.75rem;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+      margin-bottom: 1.75rem;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background-color: #1e40af;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2563eb;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #3b82f6;
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+        padding: 1rem;
+      }
+
+      .sidebar nav a {
+        flex: 1;
+        text-align: center;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+      }
+
+      .sidebar nav a:hover {
+        border-bottom: 2px solid #38bdf8;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="sidebar">
+    <div>
+      <h1>CtrlVolt</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <footer>&copy; 2025 CtrlVolt</footer>
+  </div>
 
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Electronics & Computer Engineering Student | Maker | Embedded Systems Enthusiast</p>
-  </header>
+  <div class="content">
+    <header>
+      <img src="https://via.placeholder.com/120" alt="Profile Picture">
+      <div>
+        <h2>Enab Nyakieya</h2>
+        <p>Engineer | Innovator | Creator of Smart Systems</p>
+        <a href="#" class="btn">Download CV</a>
+      </div>
+    </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a passionate student at Kirinyaga University, pursuing Electronics and Computer Engineering.
-      I love working on Arduino, ESP32, IoT projects, and learning how hardware and software interact.
-    </p>
+    <section id="about">
+      <h3>About Me</h3>
+      <div class="card">
+        <p>I’m an Electronics and Computer Engineering student passionate about IoT, embedded systems, and automation. I bring ideas to life through intelligent design, code, and hardware.</p>
+      </div>
+    </section>
 
-    <h2>Projects</h2>
-    <ul>
-      <li>🔌 Remote Motor Control with ESP32 and IoT Dashboard</li>
-      <li>📟 Smart Water Level Monitor using Ultrasonic Sensor</li>
-      <li>⚙️ PLC Logic Simulations using LogixPro</li>
-    </ul>
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="card">
+        <h4>Remote Motor Control (ESP32)</h4>
+        <p>Smart switching of motors via cloud dashboard and microcontroller interface.</p>
+      </div>
+      <div class="card">
+        <h4>PLC Conveyor Simulation</h4>
+        <p>Factory automation simulation using LogixPro with sensors and logic flow.</p>
+      </div>
+    </section>
 
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-  </section>
+    <section id="contact">
+      <h3>Contact</h3>
+      <div class="card"><form action="https://formspree.io/f/your_new_form_id" method="POST">
 
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
